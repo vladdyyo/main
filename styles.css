@@ -1,0 +1,123 @@
+:root {
+  --bg: #000000;
+  --text: #f7f7f7;
+  --invert-bg: #ffffff;
+  --invert-text: #000000;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  background: var(--bg);
+  color: var(--text);
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", "Noto Sans", Arial, sans-serif;
+  font-weight: 400;
+  letter-spacing: normal;
+}
+
+body:has(.socials a:hover),
+body:has(.socials a:focus-visible) {
+  background: var(--invert-bg);
+  color: var(--invert-text);
+}
+
+.page {
+  min-height: 100vh;
+  padding: 0.7rem 0.8rem 0 0.8rem;
+  display: flex;
+  align-items: flex-start;
+  justify-content: flex-start;
+}
+
+body:has(.socials a:hover) .brand,
+body:has(.socials a:focus-visible) .brand,
+body:has(.socials a:hover) .socials a,
+body:has(.socials a:focus-visible) .socials a,
+body:has(.socials a:hover) .rule,
+body:has(.socials a:focus-visible) .rule {
+  color: var(--invert-text);
+}
+
+body:has(.socials a:hover) .rule,
+body:has(.socials a:focus-visible) .rule {
+  border-top-color: var(--invert-text);
+}
+
+.socials a:hover,
+.socials a:focus-visible {
+  background: var(--invert-bg);
+  color: var(--invert-text);
+}
+
+.content {
+  width: 100%;
+}
+
+.brand {
+  margin: 0;
+  font-size: 94.8px;
+  line-height: 0.92;
+  letter-spacing: -0.06em;
+  font-weight: 500;
+  color: var(--text);
+}
+
+.rule {
+  width: 100%;
+  height: 0;
+  border-top: 3px solid rgba(255, 255, 255, 0.95);
+  margin: 0.6rem 0 0.9rem;
+}
+
+.socials {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 0;
+}
+
+.socials a {
+  color: var(--text);
+  text-decoration: none;
+  font-size: 94.8px;
+  line-height: 0.95;
+  letter-spacing: -0.06em;
+  font-weight: 500;
+}
+
+.socials a:hover,
+.socials a:focus-visible {
+  opacity: 0.82;
+  outline: none;
+}
+
+.skip-link {
+  position: absolute;
+  left: -9999px;
+  top: auto;
+}
+
+.skip-link:focus {
+  left: 1rem;
+  top: 1rem;
+}
+
+@media (max-width: 700px) {
+  .page {
+    padding: 0.7rem 0.7rem 0 0.7rem;
+  }
+
+  .brand,
+  .socials a {
+    font-size: clamp(2.5rem, 9vw, 5.5rem);
+    line-height: 0.93;
+  }
+}
